@@ -80,7 +80,7 @@ if [ -f "requirements.txt" ]; then
 fi
 
 # Restore .NET dependencies
-if [ -f "*.csproj" ] || [ -f "global.json" ]; then
+if ls *.csproj 1> /dev/null 2>&1 || [ -f "global.json" ]; then
     echo "Restoring .NET dependencies..."
     dotnet restore
 fi
